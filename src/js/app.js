@@ -8,5 +8,14 @@ window.addEventListener("DOMContentLoaded", () => {
     { age: 23, class: "is-warning" },
     { job: "programmer", class: "is-danger" },
   ];
+
+  var getClass = R.pluck('class');
+  const new_class = getClass(arrayToPluck);
+
   const articles = document.querySelectorAll("article");
+
+  var i = 0;
+  articles.forEach(element => {
+    element.classList.add(new_class[i++]);
+  });
 });
